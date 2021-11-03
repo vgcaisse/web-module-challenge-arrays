@@ -1,6 +1,6 @@
 /*REMEMBER TO RETURN ALL OF THE ANSWERS ON THESE TASKS, IF YOU DON'T, THE AUTOGRADER WILL NOT WORK*/
 
-const { is } = require("@babel/types");
+const { is, returnStatement } = require("@babel/types");
 
 /* 👀 This is your data ⬇ */
 const originalFlavors = [
@@ -144,11 +144,16 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(array, number){
-  originalFlavors.splice()
+function removeFlavorByName(array, flavor){
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === flavor) {
+      array.splice(i, 1);
+    }
+  }
+  return array;
 }
 
-
+console.log(removeFlavorByName(originalFlavors, 'Rocky Road'));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 July 7th is "World Chocolate Day" and Baskin Robins wants to create promotional materials highlighting all of their chocolate flavors. 
